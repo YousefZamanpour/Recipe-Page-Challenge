@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Young+Serif&display=swap');
+
+/* Css Reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom Properties */
+:root{
+
+    /* Colors */
+    --clr-primary-nutmeg: hsl(14, 45%, 36%);
+    --clr-primary-raspberry: hsl(332, 51%, 32%);
+    --clr-neutral-100:hsl(0, 0%, 100%);
+    --clr-neutral-150:hsl(330, 100%, 98%);
+    --clr-neutral-200:hsl(30, 54%, 90%);
+    --clr-neutral-250:hsl(30, 18%, 87%);
+    --clr-neutral-300:hsl(30, 10%, 34%);
+    --clr-neutral-400:hsl(24, 5%, 18%);
+
+    /* Typography */
+
+    --ff-young-serif:'Young Serif', serif;
+    --ff-outfit:'Outfit', sans-serif;
+    --fw-regular: 400;
+    --fw-semi-bold: 600;
+    --fw-bold: 700;
+    --fs-paragraph: 1rem;
+    --fs-title: 1.7rem;
+    --fs-heading: 2.2rem;
+}
+/* General Styling */
+body{
+  font-family: var(--ff-outfit);
+  background: var(--clr-neutral-150);
+}
+h1,h2{
+  font-family: var(--ff-young-serif);
+}
+h1{
+  line-height: 1em;
+}
+h2{
+  color: var(--clr-primary-nutmeg);
+  font-weight: var(--fw-semi-bold);
+  font-size: var(--fs-title);
+}
+p{
+  font-size: var(--fs-paragraph);
+}
+span{
+  font-weight: var(--fw-semi-bold);
+}
+.divider{
+  border-bottom:1px solid var(--clr-neutral-250) ;
+}
+.recipe-container{
+  padding: 2rem;
+}
+.recipe-title{
+  font-size: var(--fs-heading);
+  color: var(--clr-neutral-400);
+}
+
+/* Class Styling */
+
+.introduction{
+  display: grid;
+  gap: 1em;
+}
+.preparation{
+  margin-block: 3rem;
+}
+.prep-list{
+  display: grid;
+  gap: .7rem;
+}
+.prep-title{
+  color: var(--clr-primary-raspberry);
+  font-weight: var(--fw-semi-bold);
+  font-size: 1.2rem;
+  margin-left: -20px;
+}
+
+.prep-list li p,
+.ingredients-list li p{
+  margin-left: 15px;
+}
+
+.ingredients{
+  margin-bottom: 2rem;
+}
+.ingredients-list{
+  display: grid;
+  gap: .6rem;
+}
+
+.instructions{
+  margin-block: 2rem;
+}
+.instructions p{
+  margin-top: -25px;
+}
+ol{
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+ol li::before{
+  content: counter(li)'.';
+  color: var(--clr-primary-nutmeg);
+  display: inline-block;
+  margin-left: -2rem;
+  font-weight: var(--fw-semi-bold);
+}
+ol li{counter-increment: li;}
+
+
+.nutrition{
+  margin-block:1rem;
+  display: grid;
+  gap: .6rem;
+}
+
+td{
+  text-align: left;
+  border-bottom: 1px solid var(--clr-neutral-250);
+  padding: .8rem;
+}
+.amount{
+  font-weight: var(--fw-semi-bold);
+  color: var(--clr-primary-nutmeg);
+}
+
+@media(min-width: 700px){
+  body{
+    background: var(--clr-neutral-200);
+    display: grid;
+    place-content: center;
+  }
+  article{
+    background: var(--clr-neutral-150);
+    border-radius: 40px;
+    margin-block:5rem;
+  }
+ .recipe-title{
+  font-size: 4rem;
+  color: var(--clr-neutral-400);
+  margin-block: 1.5rem
+ }
+.thumbnail{
+  max-width: 95%;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+}
